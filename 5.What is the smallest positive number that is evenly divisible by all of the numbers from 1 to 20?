@@ -1,0 +1,30 @@
+using System;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Assignment_3
+{
+    class Program
+    {
+
+        public static int GetLCM(int from, int to)
+        {
+            var lcm = 1;
+            var sum = lcm;
+            for (int i = from; i <= to; i++)
+            {
+               
+                while (sum % i != 0)
+                {
+                    sum += lcm;
+                    
+                }
+                lcm = sum;
+            }
+            return lcm;
+        }
+        public static void Main()
+        {
+            Console.WriteLine("Answer: " + GetLCM(1, 20));
+        }
+    }
+}
