@@ -1,0 +1,42 @@
+using System;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Assignment_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string Reverse(string s)
+            {
+                char[] charArray = s.ToCharArray();
+                Array.Reverse(charArray);
+                return new string(charArray);
+            }
+
+
+            int result = 0;
+            string rev = "hello";
+            string palindrome = "hello";
+            string bingo = "hello";
+            int j = 1;
+            for (int i = 1; i < 1000; i++)
+            {
+                for (int y = 1; y < 1000; y++)
+                {
+                    result = i * y;
+                    bingo = result.ToString();
+                    rev = Reverse(bingo);
+                    j = int.Parse(bingo);
+                }
+
+                if (rev == bingo)
+                {
+                    palindrome = bingo;
+                }
+            }
+            Console.Write("Answer: "+palindrome);
+            
+        }
+    }
+}
