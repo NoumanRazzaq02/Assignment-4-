@@ -1,0 +1,38 @@
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Assignment_3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int n1 = 1, n2 = 2, n3, sum = 0;
+            bool isCondition;
+            do
+            {
+                n3 = n1 + n2;
+
+                if (n1 % 2 == 0)
+                {
+                    sum = sum + n1;
+                }
+                n1 = n2;
+                n2 = n3;
+
+                if (sum < 4000000)
+                {
+                    isCondition=true;
+                }
+                else
+                {
+                    isCondition=false;
+                }
+
+            } while (isCondition);
+            Console.WriteLine("Answer: "+sum);
+        }
+    }
+}
